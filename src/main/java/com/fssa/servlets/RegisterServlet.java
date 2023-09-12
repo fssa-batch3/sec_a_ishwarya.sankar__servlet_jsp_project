@@ -22,6 +22,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	PrintWriter out = response.getWriter();
+    	//new instance of a class named UserService in Java
     	UserService userService = new UserService();
 
         String email = request.getParameter("email");
@@ -33,13 +34,13 @@ public class RegisterServlet extends HttpServlet {
         User user = new User(email, username, password, phoneNumber, type);
 
         try {
+        	//calling the method registerUser 
             userService.registerUser(user);
             response.sendRedirect("login.jsp");
         } catch (ServiceException e) {
 //            response.getWriter().write("Error: " + e.getMessage());
-            response.sendRedirect("register.jsp?error="+e.getMessage()
-       ); // Change "error.jsp" to the actual error page you want to use.
-
+            response.sendRedirect("register2.jsp?error="+e.getMessage()
+       );
         }
     }
 

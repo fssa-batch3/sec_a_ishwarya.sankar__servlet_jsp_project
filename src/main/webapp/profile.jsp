@@ -210,20 +210,21 @@ body {
 
     <!-- Main -->
     <div class="main">
-        <h2>IDENTITY</h2>
-        <div class="card">
-            <div class="card-body">
-                <i class="fa fa-pen fa-xs edit"></i>
-                <table>
-                    <tbody>
-                        <%
+      <%
+        
                         String email = (String) session.getAttribute("loggedUser");
+                        System.out.println();
                      User userObj = new User();
                       UserDAO user = new UserDAO();
                       userObj =   user.FindUserByIdEmail(email);
-                      
-                     
                         %>
+        <h2>IDENTITY</h2>
+        <div class="card">
+            <div class="card-body">
+               <a href ="UserUpdate.jsp?email=<%= email %>"> <i class="fa fa-pen fa-xs edit"></i></a>
+                <table>
+                    <tbody>
+                      
                         <tr>
                             <td>UserName</td>
                             <td>:</td>

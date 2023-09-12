@@ -24,14 +24,15 @@ public class ListMedicineServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//instance of DAO 
 		MedicineDAO meds = new MedicineDAO();
 		PrintWriter out = response.getWriter();
-
 		List<Medicine> list = null;
 		try {
+			//gam from DAO and store it in list
 			list = meds.getAllMedicines();
+			//attribute in the request object with the name "medicine."
 			request.setAttribute("medicine", list);
-
 		} catch (DAOException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());

@@ -49,72 +49,19 @@ public class LoginServlet extends HttpServlet {
 			UserService service = new UserService();
 
 			service.loginUser(user, email);
-
+//creating session 
 			HttpSession session = request.getSession();
+			
 			session.setAttribute("loggedUser", email);
 
 			response.sendRedirect("seller.jsp");
 
 		} catch (ServiceException e) {
 
-			response.sendRedirect("login.jsp?errorMessage=" + e.getMessage());
+			response.sendRedirect("login2.jsp?errorMessage=" + e.getMessage());
 		}
 
 	}
-
-//  public static User FindUserByIdEmail(String email) {
-//			User user1 = null;
-//			String query = "SELECT * FROM user WHERE email= ?";
-//			try(Connection connection = ConnectionUtil.getConnection();
-//					PreparedStatement statement = connection.prepareStatement(query)){
-//            		statement.setString(1,email);
-//			try(ResultSet resultset = statement.executeQuery()){
-//			if(resultset.next()) {
-//				int userid = resultset.getInt("userId");
-//					 String Email = resultset.getString("email");
-//				        String username = resultset.getString("userName");
-//				        String password = resultset.getString("password");
-//				        String phoneNumber = resultset.getString("phone_number");
-//				        String type = resultset.getString("type");
-//                        int deleted = resultset.getInt("isDeleted");
-//				        user1 = new User(userid,Email,username,password,phoneNumber,type,deleted);
-//				}
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return user1;
-//	}
-//		 
-//		
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//	throws ServletException, IOException {
-//		String email = request.getParameter("email");
-//		String password = request.getParameter("password");
-//		User user = new User(email, password);
-//		HttpSession session = request.getSession();
-//		PrintWriter out = response.getWriter();
-//		User userObject = FindUserByIdEmail(email);
-//		try {
-//			if (UserService.loginUser(user, email) && !userObject.isDeleted()) {				// setting attributes in session
-//				session.setAttribute("loggedUser", email);
-//				
-//				session.setAttribute("loggedInusername", userObject.getUsername());
-//				session.setAttribute("loggedInUserID", userObject.getPassword());
-//
-//                session.setAttribute("loggedInmobileNumber", userObject.getPhonenumber());
-//				session.setAttribute("loggedInUserID", userObject.getType());
-//                session.setAttribute("loggedInemail", userObject.getEmail());
-//				if(userObject.getIsdoctor()) {
-//					response.sendRedirect("header.jsp");
-//				} else {
-//					response.sendRedirect("seller.jsp");
-//				}
-//			} else {
-//				out.println("Invalid email or password");
-//			}
-//		} catch (ServiceException e) {
-//			out.println(e.getMessage());
-//		}
+	
 
 }

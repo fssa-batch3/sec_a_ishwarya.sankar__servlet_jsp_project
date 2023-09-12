@@ -29,7 +29,6 @@ public class AddMedicineServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
-		MedicineService medicineservice = new MedicineService();
 		String Medicinename = request.getParameter("medicineName");
 		String Medicineprice = request.getParameter("medicinePrice");
 		int price = Integer.parseInt(Medicineprice);

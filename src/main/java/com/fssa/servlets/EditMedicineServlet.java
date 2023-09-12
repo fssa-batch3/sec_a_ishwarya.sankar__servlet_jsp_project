@@ -38,7 +38,7 @@ public class EditMedicineServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		try {
-
+// parses an id parameter from the request URL
 			int id = Integer.parseInt(request.getParameter("id"));
 			HttpSession ses = request.getSession();
 			ses.setAttribute("medicineid",id);
@@ -47,7 +47,6 @@ public class EditMedicineServlet extends HttpServlet {
 			request.setAttribute("medicine", medicine);
 			RequestDispatcher req = request.getRequestDispatcher("medicineEdit.jsp?id=" + id);
 			req.forward(request, response);
-			doPost(request,response);
 
 		} catch (NumberFormatException | ServiceException e) {
 			e.printStackTrace();
@@ -60,17 +59,7 @@ public class EditMedicineServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-//		HttpSession ses = request.getSession(false);
-//		int id = (int)ses.getAttribute("medicineid");
-//		response.getWriter().print(id);
-//		response.getWriter().print(request.getParameter("medicineName"));
-//		response.getWriter().print(request.getParameter("medicineId"));
-
-
-		
-
-
+			throws ServletException, IOException {		
 		Medicine medicine = new Medicine();
 		int id = Integer.parseInt(request.getParameter("medicineId"));
 		String name = request.getParameter("medicineName");

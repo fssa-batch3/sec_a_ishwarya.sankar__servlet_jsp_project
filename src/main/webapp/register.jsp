@@ -12,25 +12,23 @@
 <style>
 <style>
   body {
-    background-color: green; /* Set the background color to white */
+    background-color: green; 
   }
 
   h1 {
     text-align: center;
-    color: #4CAF50; /* Set the heading text color to green */
+    color: #4CAF50; 
   }
 
-  /* Style the form container */
   form {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #fff; /* Set the form background color to white */
+    background-color: #fff; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
-  /* Style the input fields */
   input[type="email"],
   input[type="text"],
   input[type="password"],
@@ -43,7 +41,6 @@
     border-radius: 4px;
   }
 
-  /* Style the submit button */
   input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -54,9 +51,8 @@
     float: right;
   }
 
-  /* Style the error message */
   .alert-danger {
-    background-color: #f44336; /* Set error message background color to red */
+    background-color: #f44336; 
     color: white;
     padding: 10px;
     border-radius: 4px;

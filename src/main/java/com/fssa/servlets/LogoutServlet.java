@@ -23,6 +23,7 @@ public class LogoutServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -34,7 +35,6 @@ public class LogoutServlet extends HttpServlet {
 			System.out.println("Existing Session ID:"+session.getId());
 			session.invalidate();
 			response.sendRedirect("login.jsp");
-			//removes all the session attribbutes
 		}
 		else {
 			System.out.println("No session Exists");
