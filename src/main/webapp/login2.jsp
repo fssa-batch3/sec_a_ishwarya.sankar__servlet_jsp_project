@@ -105,6 +105,7 @@ small{
 }
 </style>
 <body>
+
 <%
 	String Error = request.getParameter("errorMessage");
 	%>
@@ -123,9 +124,12 @@ small{
            <input type="password" name="password" placeholder="Enter password">
             <a href=></a>
             <button type="submit" id="login" >Login</button>
-            <small>Don't have an Account <a href="./sigup.html">Signin Now</a>
+            <small>Don't have an Account <a href="./register2.jsp">Signin Now</a>
             </small>
         </form>
     </div>
+    <script>
+   
+</script>
 </body>
 </html>

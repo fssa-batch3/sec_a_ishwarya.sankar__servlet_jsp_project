@@ -1,0 +1,109 @@
+/* .block{
+           width:100%;
+           min-height: 100vh;
+           margin-top: 0px;
+           background-color: aliceblue;       
+}
+.block img{
+    width: 270px;
+    height:auto;
+}
+.block.blog-section{
+         width:80%;
+         margin:0px auto;
+         
+         
+}
+.block .blog-section .heading{
+    width:100%;
+    height:auto;
+    text-align: center ;
+    margin:0px auto;
+    background-color:#fff;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.block .blog-section .heading h1{
+    padding-top:2px;
+    font-size: 32px;
+    color:#070707;
+}
+.block .blog-section .heading p{
+    margin-top:10px;
+    color:#79109c;
+    font-size: 15px;
+}
+.content{
+         display:flex;
+         justify-content:center;
+         align-items: center;  
+         margin:0px auto;
+         /* background-color: #717ffb; */
+         /* font-style: italic;
+         
+}
+.content1{
+    display:flex;
+    justify-content:center;
+    align-items: center;  
+    margin:0px auto;
+    /* background-color: #D09CFA; */
+    /* font-style: italic;
+}
+.content .card img{
+    position:relative;
+    top:10px;
+    left:300px;
+}
+
+.content2{
+    display:flex;
+    justify-content:center;
+    align-items: center;  
+    margin:0px auto;
+    /* background-color: #BA94D1; */
+    /* font-style: italic;
+    
+} */
+/* .content1 .card2 img{
+    position:relative;
+    top:25px;
+    left:300px;
+}
+.content2 .card3 img{
+                    position:relative;
+                    top:30px;
+                    left:300px;
+                    font-size: medium;
+                
+}
+.block .blog-section .heading p:hover{
+                        color:#e31111;
+                        font-weight: 100px; */
+                         
+                        
+/* }
+.button{
+         color:rgb(101, 4, 17);
+}
+.text-title{
+    position:relative;
+    top:10px;
+    left:300px
+/* } */
+*
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+   
+  

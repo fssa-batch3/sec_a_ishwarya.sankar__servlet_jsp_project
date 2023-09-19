@@ -1,0 +1,60 @@
+body {
+    align-items: center;
+    background-color: #e9e4e4;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .form {
+    background-image: url("../image/rm373batch15-217-01.jpg");
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 650px;
+    padding: 20px;
+    width: 350px;
+  }
+  
+  .inputBox {
+    color: #713535;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  
+  
+  .input {
+    background-color: #eaebf3;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #060505;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+
+  
+  
+  
+  .submit {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+     outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  

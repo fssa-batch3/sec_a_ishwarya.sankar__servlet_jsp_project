@@ -1,7 +1,7 @@
 package com.fssa.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,14 +21,13 @@ public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    	PrintWriter out = response.getWriter();
     	//new instance of a class named UserService in Java
     	UserService userService = new UserService();
 
-        String email = request.getParameter("email");
-        String username = request.getParameter("name");
-        String password = request.getParameter("password");
-        String phoneNumber = request.getParameter("phone_number");
+        String email = request.getParameter("reqemail");
+        String username = request.getParameter("reqname");
+        String password = request.getParameter("reqpass");
+        String phoneNumber = request.getParameter("reqphone");
         String type = request.getParameter("type");
 
         User user = new User(email, username, password, phoneNumber, type);

@@ -1,0 +1,126 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin:0;
+    text-decoration: none;
+    font-family: 'poppins';
+    height:min-content
+   
+}
+body{
+      margin: 0px;
+      height:fit-content;
+}
+.wrapper{
+  
+
+   background-color: lightblue;
+       height:800px;
+
+    display:flex;
+  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      color:#fff;        
+}
+.wrapper h1{
+   
+}
+.wrapper h5{
+       font-size:26px;
+       text-align:center;
+       font-weight: 300;
+       margin-bottom: 50px;
+       color: #0e0f0ec5;
+}
+.cards{
+          
+           margin:0 auto;
+           /* width:800px; */
+        
+}
+.card{
+        width:300px;
+        height:200px;
+        border-radius: 15px;
+        margin: 5px;
+        padding: 20px 30px;
+        background: rgba(104, 212, 160, 0.37);
+        top:-100px;
+        box-shadow:10px 20px 25px rgba(0,0,0,0,2);
+        color: #060606;
+        
+}
+.card img{
+    height:120px;
+    width:80px;
+    border:2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top:270px;
+    left:100px;
+
+}
+.card p{
+    font-size:16px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.card h2{
+    font-weight:500px;
+    margin-bottom: 4px;
+}
+.card h4{
+        color:rgb(8, 8, 8);
+        font-weight:400px;
+        font-size: 16px; 
+}
+.card i{
+     font-size: 60px;
+     position: absolute;
+     bottom: 20px;
+     right:25px;
+     color:#ebf0eb;
+}
+.card:hover{
+       transform:scale(1.0);
+       color:#333;
+       background: rgb(249, 249, 249);
+    
+}
+
+  
+      
+     .main h1 {
+        color: #03C988;;
+        margin-top: 1em;
+        margin-left: 2rem;
+    }
+    h1 span {
+        color: black;
+    }
+    h1 span:hover{
+      color:blue;
+    }
+    .main {
+     
+          display: flex;
+          justify-content: space-between;
+        
+          align-content: center;
+        
+      }
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          margin-right:7em;
+      }
+      .navbar li {
+          text-decoration: none;
+          margin: 2.7em 0px 30px 40px;
+          color: rgb(248, 251, 245);
+      }
+       
+      

@@ -34,7 +34,7 @@ public class LogoutServlet extends HttpServlet {
 			session.removeAttribute("loggedUser");
 			System.out.println("Existing Session ID:"+session.getId());
 			session.invalidate();
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("login2.jsp");
 		}
 		else {
 			System.out.println("No session Exists");

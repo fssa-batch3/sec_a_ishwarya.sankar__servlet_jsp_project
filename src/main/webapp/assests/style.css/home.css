@@ -1,0 +1,125 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    
+}
+.wrapper{
+    /* background:linear-gradient(90deg,#ecf1f6 0%,#f4f4f4 100%);
+     */
+     background-color: rgb(232, 239, 242);
+     /* background-image:url(../image/hero-banner.jpg); */
+     /* background-repeat: no-repeat; */
+     min-height: 100vh; 
+    margin: 0 auto;
+    display:flex;
+     overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "klee"; 
+    color:#946363;        
+}
+.wrapper h1{
+    font-size: 36px;
+    margin-top: 2px;
+    display: flex;
+    font-weight: 500px;
+    margin-top: 0px 0px;
+    text-align: center;
+    color: #04040487;
+}
+.wrapper h5{
+       font-size:26px;
+       text-align:center;
+       font-weight: 300;
+       margin-bottom: 5px;
+       color: #0e0f0ec5;
+}
+.cards{
+          
+           margin:0 auto;
+           /* width:800px; */
+        
+}
+.card{
+        
+        width:300px;
+        height:400px;
+        border-radius: 15px;
+        margin: 5px;
+        padding: 20px 30px;
+        background: rgba(104, 212, 160, 0.37);
+        position:relative;
+        top:-5px;
+        box-shadow:10px 20px 25px rgba(0,0,0,0,2);
+        color: #060606;
+        
+}
+.card img{
+    height:120px;
+    width:80px;
+    border:2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top:270px;
+    left:100px;
+
+}
+.card p{
+    font-size:16px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.card h2{
+    font-weight:500px;
+    margin-bottom: px;
+}
+.card h4{
+        color:rgb(8, 8, 8);
+        font-weight:400px;
+        font-size: 16px; 
+}
+.card i{
+     font-size: 60px;
+     position: absolute;
+     bottom: 20px;
+     right:25px;
+     color:#ebf0eb;
+}
+.card:hover{
+       transform:scale(1.0);
+       color:#333;
+       background: rgb(249, 249, 249);
+    
+}
+.main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+       
+      
+}
+.pov{
+       overflow: hidden;
+}
+.main {
+   
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.9);
+      display: flex;
+     
+      position: fixed;
+      z-index: 1;
+      background-color: white;
+      top: 0px;
+      left:0px;
+      right:0px;
+      height:100px;
+     
+  }
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      margin-right:7em;
+  }
+
+    

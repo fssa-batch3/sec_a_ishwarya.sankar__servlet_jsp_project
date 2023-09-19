@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    font-family: "Poppins";
+    text-decoration: none;
+    
+}
+.main2{
+    display: flex;
+    /* flex-wrap: wrap; */
+
+
+} 
+ .main {
+    /* background:#e3e2e2; */
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+   width: 1490px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    top: 0px;
+    left:0px;
+    right:0px;
+  
+    height:90px;
+   
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-right:7em;
+}
+.navbar li {
+    text-decoration: none;
+
+    margin: 2.7em 0px 30px 40px;
+    color: rgb(247, 249, 244);
+}
+ .text {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+ }
+.edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+      height:50px;
+      width:50px;
+}
+
+
+h2{
+    color:rgb(85, 244, 79);  
+   
+}
+img{
+    display:flexbox;
+    flex-direction:row;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+img:hover{
+    /* display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    padding: 10.5px;
+}
+h1{
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 20px;
+
+}
+.product{
+    
+    width:150px;
+    height:350px;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 20px 30px;
+    background: rgba(104, 212, 160, 0.37);
+    position:relative;
+    box-shadow:10px 20px 25px rgba(0,0,0,0,2);
+    color: #060606;
+    
+}
+.product p{
+font-size:16px;
+margin-top: 40px;
+margin-bottom: 25px;
+}
+.product img{
+     height:100px;
+     display:flexbox;
+     flex-direction:row;
+     flex-wrap: wrap;
+     padding: 10px;
+}
+.card {
+    height: 20em;
+    width: 12em;
+    border-radius: 1em;
+    background-color: rgb(88, 88, 85);
+    margin: 2em;
+}
+.card :hover{
+    
+    background-color: rgb(219, 219, 213);
+   
+}
+
+.mini-img-1 {
+    height: 10em;
+    width: 10em;
+    border-radius: 1em;
+
+
+}
+
+.min-heading-2 {
+    font-size: medium;
+    text-align: center;
+    color: powderblue;
+}
+
+.editbtn {
+    padding: 0em 2em;
+    border-radius: 2px;
+    background-color: chocolate;
+    margin: 2px 1.5em;
+}
+
+.detailsbtn {
+    padding: 0em 2em;
+    border-radius: 2px;
+    background-color: chocolate;
+    margin: 2px 1.5em;
+
+
+}
+
+#buy {
+    display: flex;
+}
+span img{
+    display: flex;
+    align-items: center;
+ }
+ .app{
+         display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .vcall-h2{
+    display:block;
+    
+ }
+ .vcall-h2:hover{
+  color: royalblue;
+ }
+ .vcall-h6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+ }
+ .picture{
+     margin-top: 75px;
+     
+ }
+ 
+

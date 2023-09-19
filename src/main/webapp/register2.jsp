@@ -150,24 +150,24 @@ small{
 		<input type="checkbox" id="chk" aria-hidden="true">
 			<div class="signup">
 				<form name="app" id="signup">
+				
 					<label for="chk">Sign Up</label>
 					<input type="text"  name="reqname"id="name" placeholder="User name" required>
 					<input type="email" name="reqemail" id="email" placeholder="Email"  required>
-					<input type="number" name="reqemail" id="phone_number" placeholder="phone number"  required>
+					<input type="number" name="reqphone" id="phone_number" placeholder="phone number"  required>
 					<input type="password" name="reqpass" id="password" placeholder="password"    required> 
 					
-						<select name="cars" class="Proffession" id="txt2">
+						<select name="type" class="Proffession" id="txt2">
 						  <option value="Doctor" id="doc">Doctor</option>
 						  <option value="Patient" id="patient">Patient</option>
-						  <option value="seller" id="patient">Seller</option>
+						  <option value="Seller" id="patient">Seller</option>
              
 						</select>
 						</form>
 					<button type="submit"  id="signin">Sign up</button>
-					<small>Already I have an Account <a href="./login.html">Login Now</a>
+					<small>Already I have an Account <a href="./login2.html">Login Now</a>
 					</small>
 				</form>
 			</div>
-
 </body>
 </html>
