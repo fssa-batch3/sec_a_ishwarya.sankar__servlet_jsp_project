@@ -94,7 +94,8 @@ display:flex;
                     <h2>startTime: <%= doctor.getStartTime() %></h2>
                     <h2>Experience: <%= doctor.getEndtime() %></h2>
                 </div>
-                <button class="btn-book-appointment" onclick="bookAppointment('<%= doctor.getId() %>')">Book Appointment</button>
+              <a href="EditDoc.jsp?id=<%=doctor.getId()%>"><button class="btn-book-appointment">Edit</button></a>
+                 <button class="btn-book-appointment" onclick="DeleteAppointment('<%= doctor.getDoctorname() %>')">Delete</button>
             </div>
             <%
                 count++;
@@ -119,6 +120,11 @@ display:flex;
     // Function to handle booking appointment
     function bookAppointment(doctorName) {
         alert("Booking appointment with " + doctorName);
+        // You can add your appointment booking logic here
+        // For example, redirect to a booking page or show a modal
+    }
+    function Editappointment(doctorName) {
+        alert("Edit appointment with " + doctorName);
         // You can add your appointment booking logic here
         // For example, redirect to a booking page or show a modal
     }

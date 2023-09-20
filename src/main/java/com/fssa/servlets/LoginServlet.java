@@ -2,6 +2,8 @@ package com.fssa.servlets;
 
 import java.io.IOException;
 
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.fssa.medlife.model.User;
+import com.fssa.medlife.model.Doctor;
+
 import com.fssa.medlife.service.UserService;
+import com.fssa.medlife.service.DoctorService;
 import com.fssa.medlife.service.exception.ServiceException;
 
 /**
@@ -23,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	        throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
@@ -32,14 +37,18 @@ public class LoginServlet extends HttpServlet {
 		try {
 
 			UserService service = new UserService();
+			Doctor doctor = new Doctor();
 
 			User user = service.loginUser(password, email);
 			String userType = user.getType();
 //creating session 
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(); // Assuming you have access to the request object
+			session.setAttribute("id", doctor.getId());
+			
 
 			session.setAttribute("loggedUser", email);
 			session.setAttribute("userId", user.getUserId());
+			
 		    if (userType != null) {
 		        if ("Doctor".equals(userType)) {
 		            response.sendRedirect("doctorhome.jsp");

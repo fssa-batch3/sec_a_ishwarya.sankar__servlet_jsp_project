@@ -12,21 +12,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fssa.medlife.dao.DoctorDAO;
 import com.fssa.medlife.model.Doctor;
-import com.fssa.medlife.service.DoctorService;
-import com.fssa.medlife.service.exception.ServiceException;
 
 /**
- * Servlet implementation class ListDoctorServlet
+ * Servlet implementation class AdminDoctorList
  */
-@WebServlet("/ListDoctorServlet")
-public class ListDoctorServlet extends HttpServlet {
+@WebServlet("/AdminDoctorList")
+public class AdminDoctorList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListDoctorServlet() {
+    public AdminDoctorList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,20 +35,18 @@ public class ListDoctorServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-PrintWriter out = response.getWriter();
-		 
-
+		DoctorDAO doctorDAO = new DoctorDAO();
+		PrintWriter out = response.getWriter();
+		List<Doctor> list = null;
 		try {
-			DoctorService service = new DoctorService();
-			List<Doctor> list = service.getAllDoctors();
-			System.out.println(list);
+			list = doctorDAO.getAllDoctors();
 			request.setAttribute("doctor", list);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (ServiceException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			RequestDispatcher req = request.getRequestDispatcher("online.jsp");
+			RequestDispatcher req = request.getRequestDispatcher("admin_doc.jsp");
 			req.forward(request, response);
 		}
 
