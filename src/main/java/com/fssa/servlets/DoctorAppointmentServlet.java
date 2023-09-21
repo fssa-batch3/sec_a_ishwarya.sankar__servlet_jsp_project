@@ -24,39 +24,33 @@ public class DoctorAppointmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  AppointmentService service = new AppointmentService();
-		    HttpSession session = request.getSession();
+	
+		    AppointmentService service = new AppointmentService();
 
-		    int doc_id = (Integer) session.getAttribute("id");
-System.out.println(doc_id);
-		    try {
-		        List<Appointment> appointments = service.getAllDoctorAppointments(doc_id);
- UserService userservice = new UserService();
-		        // Set the patient's username in each appointment object
-		        for (Appointment appointment : appointments) {
-		            User user = appointment.getUser();
-		            if (user != null) {
-		                int userId = user.getUserId();
-		                System.out.println(userId);
-		                // You need to implement a method to retrieve the username by user ID
-		                String username = userservice.getUsernameByUserId(userId); // Implement this method
-		                user.setUsername(username);
-		                
-		                System.out.println(username);
+		    // Retrieve the doctorId from the request parameter, assuming it's passed as "doctorId".
+		    String doctorIdParam = request.getParameter("doctorId");
 
-		            }
+		    if (doctorIdParam != null && !doctorIdParam.isEmpty()) {
+		        try {
+		            int doctorId = Integer.parseInt(doctorIdParam);
+
+		            List<Appointment> appointments = service.getAllDoctorAppointments(doctorId);
+
+		            request.setAttribute("appointments", appointments);
+
+		            // Forward to the JSP for rendering.
+		            request.getRequestDispatcher("DoctorAppointment.jsp").forward(request, response);
+		        } catch (NumberFormatException e) {
+		            e.printStackTrace();
+		            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid doctorId parameter.");
+		        } catch (ServiceException e) {
+		            e.printStackTrace();
+		            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred.");
 		        }
-
-		        request.setAttribute("appointments", appointments);
-		        System.out.println(appointments);
-
-		        // Forward to the JSP page to display the appointments
-		        request.getRequestDispatcher("doctor_appointments.jsp").forward(request, response);
-		    } catch (ServiceException e) {
-		        e.printStackTrace();
-		        response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred.");
+		    } else {
+		        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing doctorId parameter.");
 		    }
-	}
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

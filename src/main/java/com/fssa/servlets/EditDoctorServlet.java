@@ -1,59 +1,92 @@
 package com.fssa.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.medlife.model.Doctor;
-import com.fssa.medlife.model.User;
+import com.fssa.medlife.model.Medicine;
+import com.fssa.medlife.service.DoctorService;
+import com.fssa.medlife.service.MedicineService;
+import com.fssa.medlife.service.exception.ServiceException;
 
 /**
- * Servlet implementation class EditDoctorServlet
+ * Servlet implementation class EditdoctorServlet
  */
-@WebServlet("/EditDoctorServlet")
-public class EditDoctorServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    public EditDoctorServlet() {
+@WebServlet("/EditdoctorServlet")
+public class EditdoctorServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EditdoctorServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            String doc_id = request.getParameter("doctorId");
-            int id = Integer.parseInt(doc_id);
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		int id = Integer.parseInt(request.getParameter("id"));
+		HttpSession ses = request.getSession();
+		ses.setAttribute("doctorid",id);
+		Doctor doctor = null;
+		try {
+			doctor = new DoctorService().findDoctorById(id);
+		} catch (ServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.setAttribute("id",id);
+		request.setAttribute("doctor", doctor);
+		RequestDispatcher req = request.getRequestDispatcher("medicineEdit.jsp?id=" + id);
+		req.forward(request, response);
+	}
 
-            String doctorName = request.getParameter("docname");
-            String specialist = request.getParameter("type");
-            String startTime = request.getParameter("start-time");
-            String endTime = request.getParameter("end-time");
-            String experienceStr = request.getParameter("experience");
-            String image = request.getParameter("image");
-            String userIdStr = request.getParameter("userId");
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		Doctor doctor = new Doctor();
+		int id = Integer.parseInt(request.getParameter("id"));
+		String name = request.getParameter("doctor_name");
+		String specialist = request.getParameter("specialist");
 
-            // Check if experienceStr and userIdStr are not null and not empty
-            if (experienceStr != null && !experienceStr.isEmpty() &&
-                userIdStr != null && !userIdStr.isEmpty()) {
-                int experience = Integer.parseInt(experienceStr);
-                int userId = Integer.parseInt(userIdStr);
+		
+		String start_Time = request.getParameter("start_Time");
+		String End_Time = request.getParameter("End_Time");
+		int Experience = Integer.parseInt(request.getParameter("Experience"));
 
-                Doctor doctor = new Doctor(doctorName, specialist, startTime, endTime, experience, image, id, userId);
+		String image = request.getParameter("image");
+		doctor.setDoctorname(name);
+		doctor.setSpecialist(specialist);
+		doctor.setStartTime(start_Time);
+		doctor.setEndtime(End_Time);
+		doctor.setExperience(Experience);
+		doctor.setImage(image);
 
-                // Rest of your code...
-            } else {
-            	 response.sendRedirect("error_page.jsp");
-            }
+		System.out.println(doctor.toString());
 
-            request.getRequestDispatcher("admin_doc.jsp").forward(request, response);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            throw new ServletException(e.getMessage());
-        }
-    }
+		DoctorService service = new DoctorService();
+		try {
+			service.updateDoctor(doctor, id);
+		
+			response.sendRedirect("ListDoctorServlet");
+		} catch (ServiceException e) {
+			e.printStackTrace();
+			
+
+		}
+	}
+
 }

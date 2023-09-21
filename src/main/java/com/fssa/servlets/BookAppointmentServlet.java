@@ -43,7 +43,7 @@ public class BookAppointmentServlet extends HttpServlet {
 
 		int userId = (Integer)session.getAttribute("userId");
 		try {
-			List<Appointment> appointment = service.getAllUserAppointments(userId);
+			List<Appointment> appointment = service.getAllDoctorAppointments(userId);
             System.out.println(appointment);
 			request.setAttribute("appointment", appointment);
 			request.getRequestDispatcher("appointment.jsp").forward(request, response);

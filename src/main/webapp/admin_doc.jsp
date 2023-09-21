@@ -25,6 +25,7 @@ display:flex;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width:200px;
 }
 
 .doctor-card img {
@@ -94,7 +95,7 @@ display:flex;
                     <h2>startTime: <%= doctor.getStartTime() %></h2>
                     <h2>Experience: <%= doctor.getEndtime() %></h2>
                 </div>
-              <a href="EditDoc.jsp?id=<%=doctor.getId()%>"><button class="btn-book-appointment">Edit</button></a>
+              <a href="EditDoc.jsp?id=<%=doctor.getId() %>"><button class="btn-book-appointment">Edit</button></a>
                  <button class="btn-book-appointment" onclick="DeleteAppointment('<%= doctor.getDoctorname() %>')">Delete</button>
             </div>
             <%

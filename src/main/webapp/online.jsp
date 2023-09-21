@@ -15,7 +15,7 @@ display:flex;
 }
 /* Add a specific class for doctor cards */
 .doctor-card {
-    border: 1px solid #ccc;
+   border: 1px solid #ccc;
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
@@ -25,6 +25,7 @@ display:flex;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  width:200px;
 }
 
 .doctor-card img {
