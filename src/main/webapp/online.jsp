@@ -47,6 +47,40 @@ display:flex;
     text-align: center;
     margin-top: 10px;
 }
+/* Style for the search container */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Style for the search input field */
+.search-input {
+    flex-grow: 1; /* Allow the input to grow and take available space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none; /* Remove the input outline on focus */
+}
+
+/* Style for the search button */
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px; /* Adjust the spacing between input and button */
+}
+
+/* Hover effect for the search button */
+.search-button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
 </style>
 </head>
 <body>
@@ -73,6 +107,10 @@ display:flex;
     <div class="main2">
         <h1>OUR DOCTORS</h1>
         <div class="container">
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search by Doctor's Name">
+            <button id="search-button" class="search-button">Search</button>
+        </div>
             <%
             List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctor");
             %>
@@ -95,12 +133,12 @@ display:flex;
                     <h2>startTime: <%= doctor.getStartTime() %></h2>
                     <h2>Experience: <%= doctor.getEndtime() %></h2>
                 </div>
-                <button class="btn-book-appointment" onclick="bookAppointment('<%= doctor.getId() %>')">Book Appointment</button>
+<a href="book.jsp?id=<%=doctor.getId() %>"class="btn-book-appointment" onclick="return bookAppointment'<%= doctor.getId() %>'">Book Appointment</a>
             </div>
             <%
                 count++;
                 // Close the row after every three cards
-                if (count % 3 == 0) {
+                if (count % 5 == 0) {
             %>
             </div>
             <div class="doctor-row">
@@ -117,12 +155,43 @@ display:flex;
 </section>
 
 <script>
-    // Function to handle booking appointment
-    function bookAppointment(doctorName) {
-        alert("Booking appointment with " + doctorName);
-        // You can add your appointment booking logic here
-        // For example, redirect to a booking page or show a modal
+    
+
+
+    function searchDoctors() {
+        var input = document.getElementById("search-input");
+        var filter = input.value.toUpperCase();
+        var cards = document.querySelectorAll(".doctor-card");
+
+        // Iterate through all doctor cards
+        cards.forEach(function(card) {
+            var doctorName = card.querySelector("h2").textContent.toUpperCase();
+            if (doctorName.indexOf(filter) > -1) {
+                card.style.display = ""; // Display the card if the name matches
+            } else {
+                card.style.display = "none"; // Hide the card if the name doesn't match
+            }
+        });
     }
+
+    // Add an event listener to the search button
+    var searchButton = document.getElementById("search-button");
+    searchButton.addEventListener("click", searchDoctors);
+
+    // You can also trigger the search on keyup event in the input field
+    var searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("keyup", searchDoctors);
+        // Function to handle booking appointment
+        function bookAppointment(doctorName) {
+            alert("Booking appointment with " + doctorName);
+            // You can add your appointment booking logic here
+            // For example, redirect to a booking page or show a modal
+        }
+        function Editappointment(doctorName) {
+            alert("Edit appointment with " + doctorName);
+            // You can add your appointment booking logic here
+            // For example, redirect to a booking page or show a modal
+        }
 </script>
 </body>
 </html>

@@ -118,7 +118,7 @@
 </head>
 <body>
 <h1 class="h1">Create Doctor</h1>
-<form id="doctorForm" action="<%=request.getContextPath()%>/AddDoctorServlet" method="post">
+<form id="doctorForm" action="<%=request.getContextPath()%>/AddDoctorServlet" method="Post">
     <label for="docname">Name:</label>
     <input type="text" id="docname" name="docname" required><br><br>
 
@@ -136,7 +136,11 @@
 
     <label for="image">Image URL:</label>
     <input type="url" id="image" name="image" required><br><br>
+    
+   
 
+ <label for=userId>Email:</label>
+    <input id="email" name="email" type="text" required/><br><br>
     <button type="submit">Add Doctor</button>
 </form>
 

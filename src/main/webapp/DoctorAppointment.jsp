@@ -1,3 +1,6 @@
+<%@ page import="com.fssa.medlife.model.*"%>
+<%@ page import="com.fssa.medlife.dao.*"%>
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,27 +85,35 @@ tr:hover {
             </tr>
         </thead>
         <tbody id="appointment-table-body">
-            <c:forEach items="${appointments}" var="appointmentItem">
-                <tr>
-                    <td>${appointmentItem.user.username}</td>
-                    <td>${appointmentItem.appointmentDate}</td>
-                    <td>${appointmentItem.bookingDate}</td>
+        <% HttpSession session2 = request.getSession(false);
+        UserDAO user = new UserDAO();
+        DoctorDAO doctor = new DoctorDAO();
+        User userObj  = new User();
+        Doctor doctorObj = new Doctor();
+       userObj =  user.getUserByEmail((String)session2.getAttribute("loggedUser"));
+       doctorObj =  doctor.getDoctorByEmail((String)session2.getAttribute("loggedUser"));
+       AppointmentDAO appointmentDAO = new AppointmentDAO();
+       List<Appointment> list = new ArrayList<>();
+      list =  appointmentDAO.getAllDocAppointment(doctorObj.getUserId());
+      for (Appointment i : list ){
+    	  
+    	String name  = user.getUsernameByUserId(i.getUser_id());
+        %>
+               <tr>
+                    <td><%= name%></td>
+                    <td><%= i.getAppointmentDate()%></td>
+                    <td><%= i.getBookingDate()%></td>
                     <td>
-                        <c:choose>
-                            <c:when test="${appointmentItem.status eq 'Pending'}">
-                                <button class="status-button status-pending">Pending</button>
-                            </c:when>
-                            <c:when test="${appointmentItem.status eq 'Confirmed'}">
-                                <button class="status-button status-confirmed">Confirmed</button>
-                            </c:when>
-                            <c:when test="${appointmentItem.status eq 'Doctor Not Available'}">
-                                <button class="status-button status-not-available">Doctor Not Available</button>
-                            </c:when>
+                                <button class="status-button status-pending" > <a href="changeStatus?status=pending&id=<%=i.getId()%>">Pending</a> </button>
                            
-                        </c:choose>
+                                <button class="status-button status-confirmed"><a href="changeStatus?status=confirmed&id=<%=i.getId()%>">Confirmed</a></button>
+                           
+                                <button class="status-button status-not-available">Doctor Not Available</button>
+                          
                     </td>
                 </tr>
-            </c:forEach>
+                <%} %>
+            
         </tbody>
     </table>
 </div>

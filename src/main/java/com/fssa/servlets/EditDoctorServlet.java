@@ -23,35 +23,24 @@ import com.fssa.medlife.service.exception.ServiceException;
 public class EditdoctorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EditdoctorServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		int id = Integer.parseInt(request.getParameter("id"));
-		HttpSession ses = request.getSession();
-		ses.setAttribute("doctorid",id);
-		Doctor doctor = null;
-		try {
-			doctor = new DoctorService().findDoctorById(id);
-		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		request.setAttribute("id",id);
-		request.setAttribute("doctor", doctor);
-		RequestDispatcher req = request.getRequestDispatcher("medicineEdit.jsp?id=" + id);
-		req.forward(request, response);
-	}
+		try{// TODO Auto-generated method stub
+		    int id = Integer.parseInt(request.getParameter("id"));
+            DoctorService doctorService = new DoctorService();
+            System.out.println(id);
+            Doctor doctor = doctorService.findDoctorById(id);
 
+            request.setAttribute("id", id);
+            request.setAttribute("doctor", doctor);
+
+            RequestDispatcher req = request.getRequestDispatcher("EditDoc.jsp?id=" + id);
+            req.forward(request, response);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+            throw new ServletException(e.getMessage());
+        }
+    }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

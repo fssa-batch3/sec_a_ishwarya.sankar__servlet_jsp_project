@@ -1,8 +1,0 @@
-com\fssa\servlets\EditMedicineDetailsServlet.class
-com\fssa\servlets\LoginServlet.class
-com\fssa\servlets\EditMedicineServlet.class
-com\fssa\servlets\GetAllMedicineServlet.class
-com\fssa\servlets\ListMedicineServlet.class
-com\fssa\servlets\UpdateMedicineServlet.class
-com\fssa\servlets\RegisterServlet.class
-com\fssa\servlets\AddMedicineServlet.class

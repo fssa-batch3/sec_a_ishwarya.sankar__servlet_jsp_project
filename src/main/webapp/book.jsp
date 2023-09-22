@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.fssa.medlife.model.Doctor"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,7 +183,9 @@ margin-left: 5rem;
 <body>
     
 <!-- header section starts  -->
-
+ <%
+Doctor doctor = new Doctor();  
+ %>
 
 
 
@@ -194,11 +198,14 @@ margin-left: 5rem;
             <img src="../../assets/img/Medical prescription.gif" alt="">
         </div>
 
-        <form action="">
+        <form action="UserBookAppointment" method="post"> <!-- Use GET method to pass the doctorId as a query parameter -->
+    <!-- Add a hidden input field to store the doctorId -->
+    <input type="hidden" name="doctorId" value="${param.id }"/>
+ <input type="hidden" name="userId" value="<%= session.getAttribute("userId") %>"/>
             <h3>Book Appointment</h3>
-            <input type="date" placeholder="Appointment date" class="box" id="appointment-date">
-            <input type="date" placeholder="Booking date" class="box" id="booking-date">
-                <input type="text" placeholder="Status" class="box" id="status" value="pending">
+            <input type="date" placeholder="Appointment date"  name = "appointmentDate"class="box" id="appointment-date">
+            <input type="date" placeholder="Booking date"  name="bookingDate"class="box" id="booking-date">
+                <input type="text" placeholder="Status"  name="status"class="box" id="status" value="pending">
                 <button type="submit" class="box btn">Confirm Appointment</button>
             
         </form>

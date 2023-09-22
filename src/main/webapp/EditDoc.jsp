@@ -33,36 +33,41 @@
 <div class="container">
     <h1>Edit Doctor</h1>
     
+    <%
+	Doctor doctors = (Doctor) request.getAttribute("doctor");
+	%>
+	
     <% 
     String doc_id = request.getParameter("id");
     int doctorid = Integer.parseInt(doc_id);
-       Doctor doctor = new Doctor();
     %>
     
     <form id="editDoctorForm" action="EditDoctorServlet" method="post">
         <!-- Include hidden input field for doctor ID or name to identify the doctor to edit -->
-        <input type="hidden" id="doctorId" name="doctorId" value="<%=request.getParameter("doctorId")%>">
+        <input type="hidden" id="doctorId" name="doctorId" value="">
         
         <label for="docname">Name:</label>
-        <input type="text" id="docname" name="docname" required value="<%=doctor.getDoctorname()%>"><br><br>
+        <input type="text" id="docname" name="docname" required value="${doctor.doctorname }"><br><br>
 
         <label for="type">Specialist:</label>
-        <input type="text" id="type" name="type" required value="<%=doctor.getSpecialist()%>"><br><br>
+        <input type="text" id="type" name="type" required value="${doctor.specialist }"><br><br>
 
         <label for="start-time">Start Time (8:00 AM - 6:00 PM):</label>
-        <input type="time" id="start-time" name="start-time" required min="08:00" max="18:00" value="<%=doctor.getStartTime()%>"><br><br>
+        <input type="time" id="start-time" name="start-time" required min="08:00" max="18:00" value="${doctor.startTime }"><br><br>
 
         <label for="end-time">End Time (Before 12:00 AM):</label>
-        <input type="time" id="end-time" name="end-time" required max="23:59" value="<%=doctor.getEndtime()%>"><br><br>
+        <input type="time" id="end-time" name="end-time" required max="23:59" value="${doctor.endtime }"><br><br>
 
         <label for="experience">Experience:</label>
-        <input id="experience" name="experience" type="number" required value="<%=doctor.getExperience()%>"><br><br>
+        <input id="experience" name="experience" type="number" required value="${doctor.experience }"><br><br>
 
         <label for="image">Image URL:</label>
-        <input type="url" id="image" name="image" required value="<%=doctor.getImage()%>"><br><br>
+        <input type="url" id="image" name="image" required value="${doctor.image }"><br><br>
 
         <button type="submit">Update Doctor</button>
     </form>
 </div>
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+AspN8qF3J2JwTh/DbI7AdwPw5l9x1Jz3zF5f5O93ms3zGjN" crossorigin="anonymous"></script>
+
 </html>

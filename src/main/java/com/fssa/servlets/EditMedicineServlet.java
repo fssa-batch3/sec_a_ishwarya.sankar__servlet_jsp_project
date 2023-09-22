@@ -38,7 +38,6 @@ public class EditMedicineServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		try {
-// parses an id parameter from the request URL
 			int id = Integer.parseInt(request.getParameter("id"));
 			HttpSession ses = request.getSession();
 			ses.setAttribute("medicineid",id);

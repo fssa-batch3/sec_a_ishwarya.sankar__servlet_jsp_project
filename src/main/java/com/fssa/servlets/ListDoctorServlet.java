@@ -44,6 +44,8 @@ PrintWriter out = response.getWriter();
 			List<Doctor> list = service.getAllDoctors();
 			System.out.println(list);
 			request.setAttribute("doctor", list);
+			System.out.println(list);
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (ServiceException e) {

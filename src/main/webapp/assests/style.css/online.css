@@ -69,9 +69,6 @@ font-size: 40px;
 text-align: center;
 
 }
-.second{
-             background-color: rgb(218, 235, 241);
-}
 .container:hover {
     background-color: rgba(148, 236, 198, 0.579);
    /* justify-content: center; */

@@ -8,9 +8,9 @@
         String service = myOrigin + "/service.jsp";
         String about = myOrigin + "/about.jsp";
         String review = myOrigin + "/review.jsp";
-        String expert = myOrigin + "/medlifewebapp/online.jsp";
+        String expert = myOrigin + "/online.jsp";
         String medicine = myOrigin + "/product.jsp";
-        String profile = myOrigin + "/medlifewebapp/profile.jsp";
+        String profile = myOrigin + "/profile.jsp";
         String doctor = myOrigin + "/pages/doctoradding.html";
     %>
 

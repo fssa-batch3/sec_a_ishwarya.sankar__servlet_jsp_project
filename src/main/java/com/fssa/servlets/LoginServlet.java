@@ -42,12 +42,13 @@ public class LoginServlet extends HttpServlet {
 			User user = service.loginUser(password, email);
 			String userType = user.getType();
 //creating session 
-			HttpSession session = request.getSession(); // Assuming you have access to the request object
+			HttpSession session = request.getSession();
+		
 			session.setAttribute("id", doctor.getId());
 			
-
 			session.setAttribute("loggedUser", email);
 			session.setAttribute("userId", user.getUserId());
+			System.out.println(session.getAttribute("loggedUser"));
 			
 		    if (userType != null) {
 		        if ("Doctor".equals(userType)) {
@@ -64,7 +65,6 @@ public class LoginServlet extends HttpServlet {
 		    }
 
 		} catch (ServiceException e) {
-
 			response.sendRedirect("login2.jsp?errorMessage=" + e.getMessage());
 		}
 

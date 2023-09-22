@@ -26,38 +26,29 @@ public class DoctorAppointmentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		    AppointmentService service = new AppointmentService();
+		    String idParam = request.getParameter("id");
+		    System.out.println(idParam);
+		    int id = Integer.parseInt(idParam);
+		    HttpSession session = request.getSession();
+		    session.setAttribute("doctorid", id);
+		    int doctorId = (Integer) session.getAttribute("doctorId");
+		    System.out.println(doctorId);
+		    try {
 
-		    // Retrieve the doctorId from the request parameter, assuming it's passed as "doctorId".
-		    String doctorIdParam = request.getParameter("doctorId");
+	            List<Appointment> appointments = service.getAllDoctorAppointments(doctorId);
 
-		    if (doctorIdParam != null && !doctorIdParam.isEmpty()) {
-		        try {
-		            int doctorId = Integer.parseInt(doctorIdParam);
+	            request.setAttribute("appointments", appointments);
+	            System.out.println(appointments);
 
-		            List<Appointment> appointments = service.getAllDoctorAppointments(doctorId);
+	            request.getRequestDispatcher("DoctorAppointment.jsp").forward(request, response);
 
-		            request.setAttribute("appointments", appointments);
-
-		            // Forward to the JSP for rendering.
-		            request.getRequestDispatcher("DoctorAppointment.jsp").forward(request, response);
-		        } catch (NumberFormatException e) {
-		            e.printStackTrace();
-		            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid doctorId parameter.");
-		        } catch (ServiceException e) {
-		            e.printStackTrace();
-		            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred.");
-		        }
-		    } else {
-		        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Missing doctorId parameter.");
-		    }
+	        } catch (ServiceException e) {
+	            e.printStackTrace();
+	            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred.");
+	        }
+		  
 		}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	
 
 }

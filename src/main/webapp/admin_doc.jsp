@@ -73,6 +73,11 @@ display:flex;
     <div class="main2">
         <h1>OUR DOCTORS</h1>
         <div class="container">
+         <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search by Doctor's Name">
+            <button id="search-button" class="search-button">Search</button>
+        </div>
+        
             <%
             List<Doctor> doctors = (List<Doctor>) request.getAttribute("doctor");
             %>
@@ -95,7 +100,7 @@ display:flex;
                     <h2>startTime: <%= doctor.getStartTime() %></h2>
                     <h2>Experience: <%= doctor.getEndtime() %></h2>
                 </div>
-              <a href="EditDoc.jsp?id=<%=doctor.getId() %>"><button class="btn-book-appointment">Edit</button></a>
+              <a href="<%=request.getContextPath()%>/EditdoctorServlet?id=<%=doctor.getId() %>"><button class="btn-book-appointment">Edit</button></a>
                  <button class="btn-book-appointment" onclick="DeleteAppointment('<%= doctor.getDoctorname() %>')">Delete</button>
             </div>
             <%
@@ -118,6 +123,30 @@ display:flex;
 </section>
 
 <script>
+// Function to filter doctors by name
+function searchDoctors() {
+    var input = document.getElementById("search-input");
+    var filter = input.value.toUpperCase();
+    var cards = document.querySelectorAll(".doctor-card");
+
+    // Iterate through all doctor cards
+    cards.forEach(function(card) {
+        var doctorName = card.querySelector("h2").textContent.toUpperCase();
+        if (doctorName.indexOf(filter) > -1) {
+            card.style.display = ""; // Display the card if the name matches
+        } else {
+            card.style.display = "none"; // Hide the card if the name doesn't match
+        }
+    });
+}
+
+// Add an event listener to the search button
+var searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", searchDoctors);
+
+// You can also trigger the search on keyup event in the input field
+var searchInput = document.getElementById("search-input");
+searchInput.addEventListener("keyup", searchDoctors);
     // Function to handle booking appointment
     function bookAppointment(doctorName) {
         alert("Booking appointment with " + doctorName);
