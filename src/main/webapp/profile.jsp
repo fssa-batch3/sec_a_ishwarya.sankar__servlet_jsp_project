@@ -12,8 +12,8 @@
 }
 
 body {
-    background-color: #e8f5ff;
-    font-family: Arial;
+ background-color: #89e1a2;
+     font-family: Arial;
     overflow: hidden;
 }
 
@@ -178,6 +178,33 @@ body {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 <body>
+ <div class="sidenav">
+        <div class="profile">
+            <img src="" alt="" width="100" height="100">
+
+            <div class="name">
+                Medlife
+            </div>
+            <div class="job">
+                Profile Page
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="#profile" class="active">Profile</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a href="../pages/profileedit.html">Edit Profile</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a href="BookAppointmentServlet">Previous Appointment</a>
+                <hr align="center">
+            </div>
+        </div>
+    </div>
     <!-- Navbar top -->
     <div class="navbar-top">
         <div class="title">

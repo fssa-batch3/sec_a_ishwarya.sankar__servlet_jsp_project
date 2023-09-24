@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 			
 		    if (userType != null) {
 		        if ("Doctor".equals(userType)) {
-		            response.sendRedirect("doctorhome.jsp");
+		            response.sendRedirect("detailform.jsp");
 		        } else if ("Patient".equals(userType)) {
 		            response.sendRedirect("index.jsp");
 		        } else if ("Seller".equals(userType)) {

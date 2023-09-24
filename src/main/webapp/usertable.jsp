@@ -27,7 +27,6 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Replace the following rows with actual user data -->
                 <% UserDAO userDao = new UserDAO();
                 List<User> users = new ArrayList<>();
                users =  userDao.getAllUsers();

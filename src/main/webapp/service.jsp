@@ -8,6 +8,8 @@
    <link rel="stylesheet" href="./assests/style.css/service.css">
 </head>
 <body>
+<jsp:include page="./header.jsp"></jsp:include>
+
 
 
      <div class="main2">
