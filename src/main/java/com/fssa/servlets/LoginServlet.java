@@ -52,13 +52,13 @@ public class LoginServlet extends HttpServlet {
 			
 		    if (userType != null) {
 		        if ("Doctor".equals(userType)) {
-		            response.sendRedirect("detailform.jsp");
+		            response.sendRedirect("doctorhome.jsp");
 		        } else if ("Patient".equals(userType)) {
 		            response.sendRedirect("index.jsp");
 		        } else if ("Seller".equals(userType)) {
 		            response.sendRedirect("seller.jsp");
 		        } else {
-		            response.sendRedirect("defaultHomePage.jsp");
+		            response.sendRedirect("admin.jsp");
 		        }
 		    } else {
 		        response.sendRedirect("login2.jsp?errorMessage=Please select a user type");

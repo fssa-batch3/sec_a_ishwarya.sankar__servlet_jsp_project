@@ -1,0 +1,71 @@
+  
+  :root {
+      --darkgreen: #03C988;
+      --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+      --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+      --border: .2rem solid var(--green);
+  }
+
+  * {
+      font-family: 'poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+  }
+  /* booking section start */
+  .book .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+  }
+
+  .book .row .image {
+      flex: 1 1 45rem;
+  }
+
+  .book .row .image img {
+      width: 100%;
+  }
+
+  .book .row form {
+      height:700px;
+      width:700px;
+      margin-left: 700px;
+      margin-top: 20px;
+      display: block;
+      background: rgb(180, 208, 180);
+      border: var(--border);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      padding: 2rem;
+      border-radius: .5rem;
+  }
+
+  .book .row form h3 {
+      color: var(--black);
+      padding-bottom: 1rem;
+      font-size: 3rem;
+  }
+
+  .book .row form .box {
+      width: 100%;
+      margin: .7rem 0;
+      border-radius: .5rem;
+      border: var(--border);
+      font-size: 1.6rem;
+      color: var(--black);
+      text-transform: none;
+      padding: 1rem;
+  }
+
+  .book .row form .btn {
+      padding: 1rem 4rem;
+      background-color:rgb(141, 173, 141);
+
+  }
+
+ 

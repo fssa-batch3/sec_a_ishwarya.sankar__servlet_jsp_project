@@ -266,8 +266,8 @@ MEDLIFE  </a>
   <nav class="navbar">
     <a href="#home">home</a>
     <a href="#about">about</a>
-    <a href ="../pages/nwproifle.html">Profile</a>
-    <a href="../index.html" class="out">Logout</a>
+    <a href ="./profile.jsp">Profile</a>
+    <a href="./logout.jsp" class="out">Logout</a>
     
   </nav>
   <!--   end navbar -->
@@ -284,7 +284,7 @@ MEDLIFE  </a>
 
     <h2>"Medical care is not just <br>about treating illnesses;<br> it's about healing hearts and comforting souls."</h3>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt animi, alias cumque iure molestiae excepturi ?</p>
-    <a href="../index.html" class="btn">Home Page</a>
+    <a href="./detailform.jsp" class="btn">Add Your Details</a>
 
   </div>
 

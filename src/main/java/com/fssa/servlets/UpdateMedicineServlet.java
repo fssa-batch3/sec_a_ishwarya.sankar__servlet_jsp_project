@@ -43,7 +43,6 @@ public class UpdateMedicineServlet extends HttpServlet {
 						
 
 			} catch (DAOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}		
 		
@@ -53,8 +52,7 @@ public class UpdateMedicineServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+	
 		String medicinename = request.getParameter("MedicineName");
 		String medicineurl = request.getParameter("MedicineUrl");
 		int price = Integer.parseInt(request.getParameter("MedicinePrice"));
@@ -70,7 +68,6 @@ public class UpdateMedicineServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("medicineList.jsp");
 
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 

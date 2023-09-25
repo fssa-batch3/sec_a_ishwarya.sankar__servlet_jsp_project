@@ -1,3 +1,4 @@
+C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\AddDetailServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\UserBookAppointment.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\EditdoctorServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\newappointment.java
@@ -10,6 +11,7 @@ C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\co
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\AddDoctorServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\LoginServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\ListDoctorServlet.java
+C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\changeStatus.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\DeleteMedicineServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\EditMedicineDetailsServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\UpdateMedicineServlet.java
@@ -17,10 +19,12 @@ C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\co
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\RegisterServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\ListUserServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\DemoServlet.java
+C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\ListDetailServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\DoctorAppointmentServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\ListMedicineServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\UserUpdateServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\DoctorAdd.java
+C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\FeedbackServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\SearchMedicineServlet.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\AdminDoctorList.java
 C:\Users\IshwaryaSankar\eclipse-workspace\medLife\medlifewebapp\src\main\java\com\fssa\servlets\AddMedicineServlet.java

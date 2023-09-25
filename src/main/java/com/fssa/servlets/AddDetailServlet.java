@@ -41,14 +41,13 @@ public class AddDetailServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		 try {
 	            // Retrieve form parameters
-	            String certification = request.getParameter("certification");
-	            String qualification = request.getParameter("qualification");
-	            String specialist = request.getParameter("specialist");
-	            int experience = Integer.parseInt(request.getParameter("experience"));
-	           System.out.println(experience);
-	            String image = request.getParameter("image");
-	            int license = Integer.parseInt(request.getParameter("license"));
-	            int userId = Integer.parseInt(request.getParameter("userId"));
+			 String certification = request.getParameter("certification");
+			 String qualification = request.getParameter("qualification");
+			 String specialist = request.getParameter("specialist");
+			 int experience = Integer.parseInt(request.getParameter("experience"));
+			 String image = request.getParameter("image");
+			 int license = Integer.parseInt(request.getParameter("license"));
+			 int userId = Integer.parseInt(request.getParameter("userId"));
 
 	            // Create a Doctor object with the retrieved parameters
 	            Doctordetails doctor = new Doctordetails(license, certification, qualification, specialist, experience,
@@ -60,7 +59,7 @@ public class AddDetailServlet extends HttpServlet {
 
 	            if (added) {
 	                
-	                response.sendRedirect("success.html");
+	                response.sendRedirect("doctorhome.jsp");
 	            } else {
 	                response.sendRedirect("error.html");
 	            }

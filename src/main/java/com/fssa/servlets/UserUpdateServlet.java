@@ -1,6 +1,7 @@
 package com.fssa.servlets;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -26,7 +27,6 @@ public class UserUpdateServlet extends HttpServlet {
      */
     public UserUpdateServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -64,7 +64,7 @@ public class UserUpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 	
 	}
 	}

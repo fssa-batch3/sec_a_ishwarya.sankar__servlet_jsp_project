@@ -149,7 +149,7 @@ img{
     <div class="s-layout">
         <!-- Sidebar -->
         <div class="s-layout__sidebar">
-          <a class="s-sidebar__trigger" href="#0">
+          <a class="s-sidebar__trigger" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiCvWyyOI3ZdoIpY9GOhV_fJ7mzmqtPT5SbwFnBABdrdyU2HB_J5YdWkgduynUQWfpmqk&usqp=CAU">
              <i class="fa fa-bars"></i>
           </a>
         
@@ -166,12 +166,12 @@ img{
                    </a>
                 </li>
                 <li>
-                  <a class="s-sidebar__nav-link" href="">
+                  <a class="s-sidebar__nav-link" href="./ListDetailServlet">
                     <i class="fa fa-user"></i><em>Doctor's Detail</em>
                   </a>
                </li>
                 <li>
-                   <a class="s-sidebar__nav-link" href="../pages/newdoc.adding.html">
+                   <a class="s-sidebar__nav-link" href="./DoctorAdd.jsp">
                       <i class="fa fa-camera"></i><em>Add doctors</em>
                    </a>
                 </li>

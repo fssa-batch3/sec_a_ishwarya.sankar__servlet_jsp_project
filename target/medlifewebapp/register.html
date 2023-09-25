@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <style>
+        /* Your CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --main-blue: #71b7e6;
+            --main-purple: #9b59b6;
+            --main-grey: #ccc;
+            --sub-grey: #d9d9d9;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+            height: 700px;
+        }
+
+        .container .title {
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .container .title::before {
+            content: "";
+            position: absolute;
+            height: 3.5px;
+            width: 30px;
+            background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+            left: 0;
+            bottom: 0;
+        }
+
+        .container form .user__details {
+            /* Remove justify-content property to allow vertical flow */
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0 12px 0;
+        }
+
+        /* Add your additional CSS styles here to match the given example */
+
+        /* Style for form labels */
+        .input__box label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            width: 100%; /* Make labels take the full width */
+        }
+
+        /* Style for form inputs */
+        .input__box input,
+        .input__box select {
+            width: 100%; /* Make inputs and selects take the full width */
+            height: 45px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid var(--main-grey);
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+            margin-bottom: 16px; /* Add margin to space the elements vertically */
+        }
+
+        /* Style for the submit button */
+        .button input {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="RegisterServlet" method="post">
+            <div class="user__details">
+                <div class="input__box">
+                    <label for="email" class="details">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="ishusankar13@gmail.com">
+                </div>
+                <div class="input__box">
+                    <label for="name" class="details">Username:</label>
+                    <input type="text" id="name" name="name" required placeholder="Ishu@145">
+                </div>
+                <div class="input__box">
+                    <label for="password" class="details">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="********">
+                </div>
+                <div class="input__box">
+                    <label for="phone_number" class="details">Phone Number:</label>
+                    <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="012-345-6789">
+                </div>
+                <div class="input__box">
+                    <label for="type" class="details">User Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="seller">Seller</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="patient">Patient</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

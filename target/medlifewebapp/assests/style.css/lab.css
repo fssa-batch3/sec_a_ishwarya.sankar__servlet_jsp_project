@@ -1,0 +1,47 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+
+    margin:0px;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.classorder{
+          width:80%;
+          height:100px;
+          margin-left: 10%;
+          background-color: rgb(218, 148, 137);
+          border-radius: 80px;
+          overflow: hidden;
+}
+.aimg{
+              position: relative;
+              top:75px;
+              left:170px;
+}
+.classorder h2{
+               position: relative;
+               top:20px;
+               left:80px;
+               letter-spacing: 1px;
+               word-spacing: 1px;
+            
+}   
+.classorder h4{
+    position: relative;
+    top:20px;
+    left:80px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}  
+.call{
+    position:relative;
+    left:1000px;
+    top:-32px;
+}  
+ .classorder h5{
+    position:relative;
+    left:930px;
+    top:-30px;
+    font-size:20px;
+}      
