@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ page import="com.fssa.medlife.model.* , java.util.List , com.fssa.medlife.service.* "%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,13 +119,23 @@
     </style>
 </head>
 <body>
+
+
 <h1 class="h1">Create Doctor</h1>
+
 <form id="doctorForm" action="<%=request.getContextPath()%>/AddDoctorServlet" method="Post">
+ 
+<%
+List<Doctordetails> doctorDetailsList = (List<Doctordetails>) request.getAttribute("doctorDetailsList");
+if (doctorDetailsList != null) {
+    for (Doctordetails doctorDetails : doctorDetailsList) {
+%>
+
     <label for="docname">Name:</label>
-    <input type="text" id="docname" name="docname" required><br><br>
+    <input type="text" id="docname" name="docname"  value="<%=doctorDetails.getUser().getUsername() %>" required><br><br>
 
     <label for="type">Specialist:</label>
-    <input type="text" id="type" name="type" required><br><br>
+    <input type="text" id="type" name="type" value="<%=doctorDetails.getSpecialist() %>" required><br><br>
 
     <label for="start-time">Start Time (8:00 AM - 6:00 PM):</label>
     <input type="time" id="start-time" name="start-time" required min="08:00" max="18:00"><br><br>
@@ -132,18 +144,19 @@
     <input type="time" id="end-time" name="end-time" required max="23:59"><br><br>
 
     <label for="experience">Experience:</label>
-    <input id="experience" name="experience" type="number" required/><br><br>
+    <input id="experience" name="experience"  value="<%=doctorDetails.getExperience()%>" type="text"  required/><br><br>
 
     <label for="image">Image URL:</label>
-    <input type="url" id="image" name="image" required><br><br>
+    <input type="url" id="image" name="image" value="<%=doctorDetails.getImage()%>" required><br><br>
     
-   
-
- <label for=userId>Email:</label>
-    <input id="email" name="email" type="text" required/><br><br>
+    <%
+    }
+}
+%>
     <button type="submit">Add Doctor</button>
+       
+    
 </form>
-
 <div id="doctorList">
 
 </div>

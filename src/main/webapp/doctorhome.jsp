@@ -284,7 +284,7 @@ MEDLIFE  </a>
 
     <h2>"Medical care is not just <br>about treating illnesses;<br> it's about healing hearts and comforting souls."</h3>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt animi, alias cumque iure molestiae excepturi ?</p>
-    <a href="./detailform.jsp" class="btn">Add Your Details</a>
+    <a href="./profile.jsp" class="btn">Add Your Details</a>
 
   </div>
 

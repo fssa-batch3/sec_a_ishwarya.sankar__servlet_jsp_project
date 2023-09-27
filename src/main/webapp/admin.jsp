@@ -47,7 +47,6 @@ a {
    left: 0;
    width: 100%;
    height: 4em;
- 
 }
 
 .s-sidebar__trigger > i {
@@ -59,20 +58,12 @@ a {
 .s-sidebar__nav {
    position: fixed;
    top: 0;
-   left: -15em;
+   left: 0; /* Change this to 0 to make the sidebar always visible */
    overflow: hidden;
-   transition: all .3s ease-in;
    width: 15em;
    height: 100%;
    background: #49875a;
    color: rgba(202, 186, 186, 0.7);
-}
-
-.s-sidebar__nav:hover,
-.s-sidebar__nav:focus,
-.s-sidebar__trigger:focus + .s-sidebar__nav,
-.s-sidebar__trigger:hover + .s-sidebar__nav {
-   left: 0px;
 }
 
 .s-sidebar__nav ul {
@@ -122,26 +113,30 @@ a {
    transform: translate(-50%, -50%);
 }
 
-.section{
-     display: flex;
-     justify-content: space-around;
-     margin-top: 250px;
-     height:40.6em;
+.section {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 250px;
+   height: 40.6em;
 }
-.para1 h1{
-  font-size: 55px;
-  
-  color: #03C988;;
+
+.para1 h1 {
+   font-size: 55px;
+   color: #03C988;
+   margin-left:400px;
 }
-img{
+
+img {
    position: relative; 
-  top:20px;
-  left: 15%;
+   top: 20px;
+   left: 15%;
 }
-.para1 p{
-  font-size: 24px;
-  
-  color: #101211;;
+
+.para1 p {
+   font-size: 24px;
+   color: #101211;
+      margin-left:400px;
+   
 }
 
 </style>
@@ -149,9 +144,10 @@ img{
     <div class="s-layout">
         <!-- Sidebar -->
         <div class="s-layout__sidebar">
-          <a class="s-sidebar__trigger" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiCvWyyOI3ZdoIpY9GOhV_fJ7mzmqtPT5SbwFnBABdrdyU2HB_J5YdWkgduynUQWfpmqk&usqp=CAU">
+          <a class="s-sidebar__trigger" >
              <i class="fa fa-bars"></i>
           </a>
+        
         
           <nav class="s-sidebar__nav">
              <ul>
@@ -187,15 +183,11 @@ img{
         <!-- Content -->
         <div class="section">
             <div class="para1">
-              <h1>This is only accesible for Admin</h1>
+              <h1>This is only accessible for Admin</h1>
             
-              <p class = "text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Totam, nulla odit esse necessitatibus corporis voluptatem?</p>
+              <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Totam, nulla odit esse necessitatibus corporis voluptatem?</p>
               
             
-            </div>
-            <div class="img">
-              <img src="../assests/image/about-img (1).png" style="height:500px">
-            </div>
-            </div>
             
-            
+    </div>
+</body>

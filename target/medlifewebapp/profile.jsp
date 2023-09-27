@@ -176,8 +176,27 @@ body {
 
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <style>
+     <style>
+        /* Style for the back button */
+        a.back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color, you can change this */
+            color: #fff; /* Text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Hover effect */
+        a.back-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style></style>
 </head>
 <body>
+    <a href="./index.jsp" class="back-button">Back</a>
+
  <div class="sidenav">
         <div class="profile">
             <img src="" alt="" width="100" height="100">
@@ -263,10 +282,10 @@ body {
                             <td><%=userObj.getEmail() %></td>
                         </tr>
                         <tr>
-                            <td>Password</td>
-                            <td>:</td>
-                            <td><%=userObj.getPassword() %></td>
-                        </tr>
+    <td>Password</td>
+    <td>:</td>
+    <td><input type="password" value="<%= userObj.getPassword() %>" readonly></td>
+</tr>
                         <tr>
                             <td>PhoneNumber</td>
                             <td>:</td>
@@ -280,6 +299,7 @@ body {
                         <%
                        
                         %>
+                        
                     </tbody>
                 </table>
             </div>

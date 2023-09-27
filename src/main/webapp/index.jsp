@@ -26,7 +26,7 @@
 <div class="para1">
   <h1>Stay Safe<br> Stay  Healthy</h1>
 
-  <p class = "text text-md">Lorem22, ipsum dolor sit amet consectetur adipisicing elit.<br> Totam, nulla odit esse necessitatibus corporis voluptatem?</p>
+  <p class = "text text-md">"The good physician treats the disease; the great physician treats the patient who has the disease."</p>
   <button class="btn1"><a href="./ListDoctorServlet">FREE APPOINMENT</a></button>
   
 

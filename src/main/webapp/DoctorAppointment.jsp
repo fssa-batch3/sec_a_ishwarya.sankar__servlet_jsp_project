@@ -37,7 +37,7 @@ th, td {
 }
 
 thead {
-    background-color: #333;
+    background-color: #44af4d;
     color: #fff;
 }
 
@@ -59,11 +59,14 @@ tr:hover {
 .status-pending {
     background-color: #ff9800;
     color: #fff;
+    border-radius:20px;
 }
 
 .status-confirmed {
     background-color: #4caf50;
     color: #fff;
+        border-radius:20px;
+    
 }
 
 .status-not-available {
@@ -73,7 +76,7 @@ tr:hover {
 </style>
 </head>
 <body>
-<h1>Patient Appointments</h1>
+<h1>List of Appointments</h1>
 <div class="table-container">
     <table class="table table-bordered">
         <thead class="thead-dark">
@@ -82,6 +85,8 @@ tr:hover {
                 <th>Appointment Date</th>
                 <th>Booking Date</th>
                 <th>Action</th>
+                 <th>Status</th> 
+                
             </tr>
         </thead>
         <tbody id="appointment-table-body">
@@ -108,8 +113,7 @@ tr:hover {
                            
                                 <button class="status-button status-confirmed"><a href="changeStatus?status=confirmed&id=<%=i.getId()%>">Confirmed</a></button>
                            
-                                <button class="status-button status-not-available">Doctor Not Available</button>
-                          
+                            <td class="status-cell"><%= i.getStatus() %></td>
                     </td>
                 </tr>
                 <%} %>
@@ -117,5 +121,14 @@ tr:hover {
         </tbody>
     </table>
 </div>
+<script>
+function updateStatus(appointmentId, newStatus) {
+    // Find the corresponding status cell by searching for the appointmentId
+    var statusCell = document.querySelector('tr[data-appointment-id="' + appointmentId + '"] .status-cell');
+
+    // Update the status cell with the new status
+    statusCell.textContent = newStatus;
+}
+</script>
 </body>
 </html>

@@ -27,7 +27,7 @@
   <h1>Stay Safe<br> Stay  Healthy</h1>
 
   <p class = "text text-md">Lorem22, ipsum dolor sit amet consectetur adipisicing elit.<br> Totam, nulla odit esse necessitatibus corporis voluptatem?</p>
-  <button class="btn1"><a href="./pages/online.html">FREE APPOINMENT</a></button>
+  <button class="btn1"><a href="./ListDoctorServlet">FREE APPOINMENT</a></button>
   
 
 </div>

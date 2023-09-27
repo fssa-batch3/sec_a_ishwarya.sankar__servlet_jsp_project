@@ -203,9 +203,9 @@ Doctor doctor = new Doctor();
     <input type="hidden" name="doctorId" value="${param.id }"/>
  <input type="hidden" name="userId" value="<%= session.getAttribute("userId") %>"/>
             <h3>Book Appointment</h3>
-            <input type="date" placeholder="Appointment date"  name = "appointmentDate"class="box" id="appointment-date">
+            <input type="date" placeholder="Appointment date" name = "appointmentDate"class="box" id="appointment-date">
             <input type="date" placeholder="Booking date"  name="bookingDate"class="box" id="booking-date">
-                <input type="text" placeholder="Status"  name="status"class="box" id="status" value="pending">
+                <input type="text" hidden  placeholder="Status"  name="status"class="box" id="status" value="pending">
                 <button type="submit" class="box btn">Confirm Appointment</button>
             
         </form>

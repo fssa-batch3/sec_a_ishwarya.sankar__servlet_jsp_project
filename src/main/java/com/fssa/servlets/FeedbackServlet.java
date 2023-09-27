@@ -31,34 +31,31 @@ public class FeedbackServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		   // Retrieve form data
-        String feedbackText = request.getParameter("feedback");
-        int rating = Integer.parseInt(request.getParameter("rating"));
-        String userName = request.getParameter("userName"); // Make sure the input field name matches
-
-        Feedback feedback = new Feedback(feedbackText, rating, userName);
-
-        FeedbackService feedbackService = new FeedbackService();
-        try {
-            feedbackService.addFeedback(feedback);
-            // Redirect to a thank you page or display a success message
-            response.sendRedirect("thankyou.jsp");
-        } catch (ServiceException e) {
-            // Handle any errors
-            e.printStackTrace();
-            // Redirect to an error page or display an error message
-            response.sendRedirect("error.jsp");
-        }
-    }
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		String feedbackText = request.getParameter("feedbackText");
+        int rating = Integer.parseInt(request.getParameter("rating"));
+        String userName = request.getParameter("userName");
+
+        Feedback feedback = new Feedback(feedbackText, rating, userName);
+
+        FeedbackService feedbackService = new FeedbackService();
+        try {
+            boolean isAdded = feedbackService.addFeedback(feedback);
+            if (isAdded) {
+                response.sendRedirect("thankyou.jsp"); // Redirect to a thank-you page
+            } else {
+                // Handle the case where feedback was not added successfully
+                response.sendRedirect("error.jsp");
+            }
+        } catch (ServiceException e) {
+            e.printStackTrace(); // Print the exception details to the console for debugging
+            response.sendRedirect("error.jsp");
+        }
+    }
 
 }

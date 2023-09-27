@@ -2,6 +2,7 @@ package com.fssa.servlets;
 
 import java.io.IOException;
 
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -36,13 +37,10 @@ public class ListDetailServlet extends HttpServlet {
 		   try {
 			     DetailsService detailsService = new DetailsService();
 
-	            // Retrieve the list of doctor details from your data source
 	            List<Doctordetails> doctorDetailsList = detailsService.listDoctorDetails();
 
-	            // Set the list as a request attribute
 	            request.setAttribute("doctorDetailsList", doctorDetailsList);
 
-	            // Forward the request to the JSP page for displaying the list
 	            request.getRequestDispatcher("etaillist.jsp").forward(request, response);
 	        } catch (Exception e) {
 	            e.printStackTrace();

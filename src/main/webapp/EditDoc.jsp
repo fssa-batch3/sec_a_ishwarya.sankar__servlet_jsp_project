@@ -47,7 +47,7 @@
         <input type="hidden" id="doctorId" name="doctorId" value="">
         
         <label for="docname">Name:</label>
-        <input type="text" id="docname" name="docname" required value="${doctor.doctorname }"><br><br>
+        <input type="text" id="docname" name="docname" required value="${doctor.UserName}"><br><br>
 
         <label for="type">Specialist:</label>
         <input type="text" id="type" name="type" required value="${doctor.specialist }"><br><br>

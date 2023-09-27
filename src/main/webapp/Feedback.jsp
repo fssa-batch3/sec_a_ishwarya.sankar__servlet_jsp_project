@@ -51,27 +51,22 @@
                     <form action="FeedbackServlet" method="post">
                         <div class="form-group">
                             <label for="feedback">Feedback:</label>
-                            <textarea id="feedback" name="feedback" class="form-control" rows="4" pattern="^[A-Za-z0-9_]{3,20}$" required></textarea>
+                            <textarea id="feedback" name="feedbackText" class="form-control" rows="4" pattern="^[A-Za-z0-9_]{3,20}$" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="feedback">UserName:</label>
-                            <textarea id="feedback" name="UserName" class="form-control" rows="4"></textarea>
+                            <label for="userName">UserName:</label>
+                            <input type="text" id="userName" name="userName" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                             <label for="rating">Rating:</label><br>
-                            <div class="rating">
-                                <input type="radio" id="star5" name="rating" value="5">
-                                <label for="star5">5</label>
-                                <input type="radio" id="star4" name="rating" value="4">
-                                <label for="star4">4</label>
-                                <input type="radio" id="star3" name="rating" value="3">
-                                <label for="star3">3</label>
-                                <input type="radio" id="star2" name="rating" value="2">
-                                <label for="star2">2</label>
-                                <input type="radio" id="star1" name="rating" value="1">
-                                <label for="star1">1</label>
-                            </div>
+                            <select id="rating" name="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block">Submit</button>
@@ -85,7 +80,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <script>
         // JavaScript to handle star rating selection
         document.addEventListener("DOMContentLoaded", function() {
