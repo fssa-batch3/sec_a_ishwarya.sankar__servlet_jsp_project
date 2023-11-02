@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.medlife.dao.UserDAO;
 import com.fssa.medlife.exception.DAOException;
@@ -30,6 +31,9 @@ public class AddDoctorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		
+		session.getAttribute("userId");
 		PrintWriter out = response.getWriter();
 		String doctorName = request.getParameter("docname");
 		String specialist = request.getParameter("type");
@@ -37,11 +41,13 @@ public class AddDoctorServlet extends HttpServlet {
 		String EndTime = request.getParameter("end-time");
 		int experienceStr = Integer.parseInt(request.getParameter("experience"));
 		String image = request.getParameter("image");
-		String email = request.getParameter("email");
+		String email = (String) session.getAttribute("loggedUser");
+		System.out.println(email);
 		UserDAO user = new UserDAO();
 		User userObj = new User();
 		try {
 			userObj = user.getUserByEmail(email);
+			System.out.println(userObj );
 			System.out.println(userObj.getUserId());
 		} catch (DAOException e) {
 			// TODO Auto-generated catch block

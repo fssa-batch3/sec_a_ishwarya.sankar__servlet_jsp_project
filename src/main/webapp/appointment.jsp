@@ -7,50 +7,50 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
- <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
+ 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+    }
 
-        h1 {
-            color: #333;
-        }
+    h1 {
+        color: #44af4d;
+    }
 
-        .table-container {
-            margin-top: 20px;
-        }
+    .table-container {
+        margin-top: 20px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
 
-        table, th, td {
-            border: 1px solid #ccc;
-        }
+    table, th, td {
+        border: 1px solid #44af4d;
+    }
 
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
 
-        thead {
-            background-color: #333;
-            color: #fff;
-        }
+    thead {
+        background-color: #44af4d;
+        color: #fff;
+    }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+    tr:nth-child(even) {
+        background-color: #44af4d;
+    }
 
-        tr:hover {
-            background-color: #ddd;
-        }
-    </style>
-</head>
+    tr:hover {
+        background-color: #c9ffc9; /* Lighter green background color on hover */
+    }
+</style></head>
 <body>
   <h1>My Appointments</h1>
     <div class="table-container">

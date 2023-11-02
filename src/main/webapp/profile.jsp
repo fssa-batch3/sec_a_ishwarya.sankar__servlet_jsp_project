@@ -449,7 +449,7 @@ fieldset {
     <fieldset>
       <input placeholder="Image" name="image" type="url" tabindex="2" required>
     </fieldset>
-     <input type="number" name="userId" value=${userObj.getuserId()}>
+<input type="number" name="userId" value="${userObj.getuserId()}" style="display: none;">
      
     
       <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>

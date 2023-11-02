@@ -130,8 +130,10 @@ display:flex;
                     </div>
                     
                     <hr />
-                    <h2>startTime: <%= doctor.getStartTime() %></h2>
-                    <h2>Experience: <%= doctor.getEndtime() %></h2>
+                    <h2>StartTime: <%= doctor.getStartTime() %></h2>
+                    <h2>EndTime: <%= doctor.getEndtime() %></h2>
+                            <h2>Experience: <%= doctor.getExperience() %></h2>
+                    
                 </div>
 <a href="book.jsp?id=<%=doctor.getId() %>"class="btn-book-appointment" onclick="return bookAppointment'<%= doctor.getId() %>'">Book Appointment</a>
             </div>
@@ -154,44 +156,41 @@ display:flex;
     </div>
 </section>
 
+
 <script>
     
 
+function searchDoctors() {
+    let input = document.getElementById("search-input");
+    let filter = input.value.toUpperCase();
+    let cards = document.querySelectorAll(".doctor-card");
 
-    function searchDoctors() {
-        var input = document.getElementById("search-input");
-        var filter = input.value.toUpperCase();
-        var cards = document.querySelectorAll(".doctor-card");
-
-        // Iterate through all doctor cards
-        cards.forEach(function(card) {
-            var doctorName = card.querySelector("h2").textContent.toUpperCase();
-            if (doctorName.indexOf(filter) > -1) {
-                card.style.display = ""; // Display the card if the name matches
-            } else {
-                card.style.display = "none"; // Hide the card if the name doesn't match
-            }
-        });
-    }
-
-    // Add an event listener to the search button
-    var searchButton = document.getElementById("search-button");
-    searchButton.addEventListener("click", searchDoctors);
-
-    // You can also trigger the search on keyup event in the input field
-    var searchInput = document.getElementById("search-input");
-    searchInput.addEventListener("keyup", searchDoctors);
-        // Function to handle booking appointment
-        function bookAppointment(doctorName) {
-            alert("Booking appointment with " + doctorName);
-            // You can add your appointment booking logic here
-            // For example, redirect to a booking page or show a modal
+    cards.forEach(function(card) {
+        let doctorName = card.querySelector("h2").textContent.toUpperCase();
+        if (doctorName.indexOf(filter) > -1) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
         }
-        function Editappointment(doctorName) {
-            alert("Edit appointment with " + doctorName);
-            // You can add your appointment booking logic here
-            // For example, redirect to a booking page or show a modal
-        }
+    });
+}
+
+let searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", searchDoctors);
+
+let searchInput = document.getElementById("search-input");
+searchInput.addEventListener("keyup", searchDoctors);
+
+function bookAppointment(doctorName) {
+    alert("Booking appointment with " + doctorName);
+}
+
+function Editappointment(doctorName) {
+    alert("Edit appointment with " + doctorName);
+    
+}
+
 </script>
+
 </body>
 </html>

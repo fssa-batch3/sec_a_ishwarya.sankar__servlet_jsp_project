@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Insert title here</title>
+
 </head>
 <style>
+
  
  
  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@500&display=swap');
@@ -104,6 +107,7 @@ small{
 
 }
 </style>
+
 <body>
 
 <%
@@ -129,7 +133,7 @@ small{
         </form>
     </div>
     <script>
-   
+
 </script>
 </body>
 </html>

@@ -33,4 +33,7 @@
     <h4>Tired of waiting in a queue? Too weak to go down and buy medicines?</h4>
     <img src="./assests/image/mar-card-2.5a0b85e1.png" height=200px >
 </div>
+<jsp:include page="./footer.jsp"></jsp:include>
+
 <script src="../header.js">
+

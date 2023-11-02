@@ -41,25 +41,19 @@ public class changeStatus extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get the "id" and "status" parameters from the request.
         int id = Integer.parseInt(request.getParameter("id"));
         String newStatus = request.getParameter("status");
-
         String sql = "UPDATE appointments SET Status = ? WHERE id = ?";
         try (Connection connection = ConnectionUtil.getConnection();
-   	         PreparedStatement pmt = connection.prepareStatement(sql)) {
-            // Update the status in the appointments table.
-           
+   	         PreparedStatement pmt = connection.prepareStatement(sql)) {           
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, newStatus);
             preparedStatement.setInt(2, id);
-
             int rowsAffected = preparedStatement.executeUpdate();
             
             if (rowsAffected > 0) {
                 response.sendRedirect("DoctorAppointment.jsp");
             } else {
-                // No rows were updated.
                 response.getWriter().println("No appointment found with the specified ID.");
             }
         } catch (SQLException e) {

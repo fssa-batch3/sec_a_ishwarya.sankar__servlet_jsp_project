@@ -160,6 +160,8 @@ small{
 						<select name="type" class="Proffession" id="txt2">
 						  <option value="Doctor" id="doc">Doctor</option>
 						  <option value="Patient" id="patient">Patient</option>
+						  						  <option value="Admin" id="admin">Admin</option>
+						  
 						</select>
 						</form>
 					<button type="submit"  id="signin">Sign up</button>

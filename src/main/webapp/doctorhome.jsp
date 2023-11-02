@@ -267,7 +267,7 @@ MEDLIFE  </a>
     <a href="#home">home</a>
     <a href="#about">about</a>
     <a href ="./profile.jsp">Profile</a>
-    <a href="./logout.jsp" class="out">Logout</a>
+    <a href="./LogoutServlet" class="out">Logout</a>
     
   </nav>
   <!--   end navbar -->

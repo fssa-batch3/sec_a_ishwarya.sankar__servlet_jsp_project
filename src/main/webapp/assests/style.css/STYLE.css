@@ -158,8 +158,6 @@ footer{
   /* left:100px; */
 }
 .container-1 {
- /* max-width: 1100px; */
- /* margin: 0 auto; */
  display: flex;
  margin-left: 40px;
  justify-content: center;
@@ -272,8 +270,9 @@ footer{
 .fq{
   display:flex;
   justify-content: center;
+        background-color:rgba(190, 72, 72, 0.1);
+  
     margin-top: -800px;  
-   background-color: #e2e3db;
    height: 150px;
    
 } 
@@ -288,6 +287,7 @@ footer{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
   padding:30px;
   gap: 200px;
 

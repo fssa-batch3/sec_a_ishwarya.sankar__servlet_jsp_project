@@ -36,6 +36,20 @@ public class UserBookAppointment extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 try {
 	            // Retrieve appointment details from the request parameters
+			 
+			 String userIdParam = request.getParameter("userId");
+			 String doctorIdParam = request.getParameter("doctorId");
+
+			 if (userIdParam != null && !userIdParam.isEmpty() && doctorIdParam != null && !doctorIdParam.isEmpty()) {
+			     int userId = Integer.parseInt(userIdParam);
+			     int id = Integer.parseInt(doctorIdParam);
+
+			    System.out.println("sfsd"+userIdParam);
+			    System.out.println(doctorIdParam);
+			 } else {
+					response.sendRedirect("/book.jsp");
+			 }
+
 	            int userId = Integer.parseInt(request.getParameter("userId"));
 	            int id = Integer.parseInt(request.getParameter("doctorId"));
 	            String appointmentDate = request.getParameter("appointmentDate");
@@ -71,7 +85,7 @@ public class UserBookAppointment extends HttpServlet {
 
 	            if (success) {
 	                // Redirect to a success page
-	            	response.sendRedirect("/BookAppointmentServlet");
+	            	response.sendRedirect(request.getContextPath()+"/BookAppointmentServlet");
 	            } else {
 	                // Handle the case where insertion failed
 	                // You can redirect to an error page or show an error message
@@ -82,4 +96,3 @@ public class UserBookAppointment extends HttpServlet {
 	        }
 	    }
 }
-

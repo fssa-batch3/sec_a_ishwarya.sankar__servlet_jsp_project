@@ -66,7 +66,6 @@ label {
 	margin-bottom: 5px;
 }
 
-/* Style for form input fields */
 input[type="email"], input[type="password"] {
 	width: 100%;
 	padding: 10px;

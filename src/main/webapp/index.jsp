@@ -15,7 +15,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" integrity=""></script>
   <script type="text/javascript">
     (function () {
-        emailjs.init("xJczW25BwYvEu6S51");
+        emailjs.init("O0pAdKnucUVfXQY5O");
     })();
     </script>
 </head>
@@ -47,9 +47,10 @@
         <h3>24 HOURS SERVICE</h3>
         <!-- <i class="fa-solid fa-hospital"></i> -->
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt,
-          reprehenderit! Error cupiditate dignissimos praesentium, tempore nemo
-          labore aperiam deserunt illum veniam perspiciatis
+        
+Providing 24-hour hospital services ensures continuous medical care and
+ immediate attention to emergencies, enhancing patient safety and well-being   
+
         </p>
       </div>
     </div>
@@ -58,9 +59,9 @@
         <h2>02</h2>
         <h3>EMERGENCY CARE</h3>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt,
-          reprehenderit! Error cupiditate dignissimos praesentium, tempore nemo
-          labore aperiam deserunt illum veniam perspiciatis
+         Providing 24-hour hospital services ensures continuous medical care and
+ immediate attention to emergencies, enhancing patient safety and well-being   
+         
         </p>
       </div>
     </div>
@@ -68,9 +69,9 @@
       <div class="box">
         <h2>03</h2>
         <h3>FACILITIES</h3>
-        <p>loorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt,
-          reprehenderit! Error cupiditate dignissimos praesentium, tempore nemo
-          labore aperiam deserunt illum veniam perspiciatis
+        <p>Providing 24-hour hospital services ensures continuous medical care and
+ immediate attention to emergencies, enhancing patient safety and well-being   
+        
         </p>
       </div>
     </div>
@@ -97,7 +98,6 @@
     <img class="app apple" src="./assests/image/google_play.png">
   </span>
 
-  <!-- hospital things -->
   <section class="fq">
     <div class="faqwhole">
       <h1 class="faq1">2,00,000+<br>Happy Users</h1>
@@ -219,12 +219,12 @@
             <h3>Contact</h3>
             <div class="contact-details">
               <i class="fa fa-location"></i>
-              <p>FF-42, Procube Avenue, <br> NY, USA</p>
+              <p>Papanasam<br>Tirunelveli</p>
             </div>
             <div class="contact-details">
               <i class="fa fa-phone"></i>
               
-              <p>+1-8755856858</p>
+              <p>+91-6381372487</p>
             </div>
           </div>
         </div>
@@ -259,7 +259,7 @@
               message: body,
              }
 //email sending event function
-emailjs.send("service_sp6m68x","template_1veprt4",params)
+emailjs.send("service_o8vj5wj","template_57ohe3n",params)
 .then((res) => {
   console.log(res)
 

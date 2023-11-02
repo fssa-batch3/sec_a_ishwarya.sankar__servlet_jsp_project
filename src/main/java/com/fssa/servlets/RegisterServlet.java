@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
         try {
         	//calling the method registerUser 
             userService.registerUser(user);
-           
+           System.out.println(user);
             response.sendRedirect("login.jsp");
         } catch (ServiceException e) {
 //            response.getWriter().write("Error: " + e.getMessage());
